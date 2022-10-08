@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap');
+body{
+    font-family: 'Caveat', cursive;
+}
+input{
+    width: 80vw;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 1px #4d4d4d;
+    padding: 5px;
+    margin: 10px auto;
+    display: block;
+    font-size: 20px;
+}
+input:focus{
+    outline: none;
+    box-shadow: 3px 3px 8px 2px #4d4d4d;
+    transition-duration: .5s;
+}
+button{
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 25px;
+    display: block;
+    background-color: transparent;
+    border: 1px solid black;
+}
+.disabled{
+    pointer-events: none;
+    background-color: #838383;
+    color: #4d4d4d;
+    border: none;
+}
+.cards{
+    width: 90vw;
+    display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));    margin: 0 auto;
+}
+.flash-card{
+    width: 150px;
+    height: 190px;
+    padding: 10px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 1px 1px 10px 1px #4d4d4d;
+    transition-duration: 1s;
+    position: relative;
+}
+
+.flash-card .del-btn{
+    position: absolute;
+    top: 0;
+    right: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    border-radius: 50px;
+}
+.flash-card .del-btn i{
+   font-size: 35px;
+}
+
+@media screen and (max-width:650px){
+    .cards{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .flash-card{
+        place-self: center;
+    }
+}
+@media screen and (max-width:400px){
+    .cards{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .flash-card{
+        place-self: center;
+        width: 80%;
+    }
+}
